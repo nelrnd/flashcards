@@ -3,4 +3,8 @@ export default class Deck {
     this.title = title;
     this.cards = cards;
   }
+
+  get length() {
+    return this.cards.length;
+  }
 }
