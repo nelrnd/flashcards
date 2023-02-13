@@ -1,0 +1,25 @@
+{
+  "title": "JavaScript Array Methods",
+  "cards": [
+    {
+      "question": "Crée et retourne une nouvelle string en concaténant tous les éléments d'un array. Peut prendre un séparateur en argument.",
+      "answer": "La méthode join()"
+    },
+    {
+      "question": "Ajoute un ou plusieurs éléments à la fin d'un array et retourne la nouvelle longueur de l'array.",
+      "answer": "La méthode push()"
+    },
+    {
+      "question": "Retire le premier élément d'un array et retourne cet élément",
+      "answer": "La méthode shift()"
+    },
+    {
+      "question": "Ajoute, retire ou remplace un ou plusieurs élément d'un array à un index défini",
+      "answer": "La méthode splice()"
+    },
+    {
+      "question": "Inverse le sens des éléments d'un array",
+      "answer": "La méthode reverse()"
+    }
+  ]
+}
