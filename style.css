@@ -27,9 +27,9 @@ button:hover {
 }
 
 .deck {
-  padding: 24px;
+  padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
 
   display: flex;
   align-items: center;
