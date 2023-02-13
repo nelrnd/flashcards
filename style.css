@@ -4,3 +4,40 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  padding: 2rem;
+  font-size: 20px;
+}
+
+button {
+  display: block;
+  min-width: 120px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 20px;
+  color: white;
+  background-color: black;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.deck {
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.deck-title {
+  font-size: 40px;
+}
+.deck-text {
+  color: rgba(0, 0, 0, 0.6);
+}

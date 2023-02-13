@@ -1,16 +1,21 @@
 function createDeck(deck) {
   const elem = document.createElement('div');
+  const wrapper = document.createElement('div');
   const title = document.createElement('h2');
   const text = document.createElement('p');
   const button = document.createElement('button');
 
   elem.className = 'deck';
+  title.className = 'deck-title';
+  text.className = 'deck-text';
+
   title.textContent = deck.title;
   text.textContent = `${deck.length} cards`;
   button.textContent = 'Start';
 
-  elem.appendChild(title);
-  elem.appendChild(text);
+  wrapper.appendChild(title);
+  wrapper.appendChild(text);
+  elem.appendChild(wrapper);
   elem.appendChild(button);
 
   return elem;
