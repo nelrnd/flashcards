@@ -1,9 +1,8 @@
 import Card from './classes/card.js';
 import Deck from './classes/deck.js';
+import { displayDeck } from './dom.js';
 
 const decks = [];
-
-// load deck
 
 async function loadDeck(fileName) {
   const response = await fetch(`./decks/${fileName}.json`);
@@ -13,4 +12,6 @@ async function loadDeck(fileName) {
   decks.push(new Deck(json.title, cards));
 }
 
-loadDeck('array-methods');
+await loadDeck('array-methods');
+
+decks.forEach((deck) => displayDeck(deck));
