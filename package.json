@@ -1,0 +1,19 @@
+{
+  "name": "flashcards",
+  "version": "1.0.0",
+  "description": "A flashcard app to learn faster",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nelrnd/flashcards.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nelrnd/flashcards/issues"
+  },
+  "homepage": "https://github.com/nelrnd/flashcards#readme"
+}
