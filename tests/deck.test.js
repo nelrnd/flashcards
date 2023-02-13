@@ -19,4 +19,12 @@ describe('Class for creating deck element', () => {
     const deck = new Deck(title, cards);
     expect(deck.length).toBe(3);
   });
+
+  it('Add a new card to deck', () => {
+    const deck = new Deck(title, cards);
+    const card = new Card('What is 10/2?', '10/2 is 5');
+    deck.add(card);
+    expect(deck.length).toBe(4);
+    expect(deck.cards[3]).toBe(card);
+  });
 });

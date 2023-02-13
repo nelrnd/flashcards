@@ -7,4 +7,8 @@ export default class Deck {
   get length() {
     return this.cards.length;
   }
+
+  add(card) {
+    this.cards.push(card);
+  }
 }
