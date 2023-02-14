@@ -28,6 +28,10 @@ function displayDeck(deck) {
   document.body.appendChild(elem);
 }
 
+function displayDecks(decks) {
+  decks.forEach((deck) => displayDeck(deck));
+}
+
 function createCard(card) {
   const elem = document.createElement('div');
   const text = document.createElement('p');
@@ -146,6 +150,10 @@ function showCard(value) {
 function rateCard(value, deck) {
   deck.current.isCorrect = value;
   deck.next();
+  if (!deck.current) {
+    displayResult(deck);
+    return;
+  }
   showQuestion(deck.current);
 }
 
@@ -202,4 +210,4 @@ function displayResult(deck) {
   document.body.appendChild(elem);
 }
 
-export { displayDeck, displayResult };
+export { displayDecks };
