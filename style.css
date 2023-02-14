@@ -113,14 +113,15 @@ button:hover {
   font-size: 24px;
   text-align: center;
   line-height: 150%;
-  padding: 2rem 2rem 4rem;
-  height: 30vmin;
+  padding: 2rem;
+  height: min(40vmin, 400px);
   width: auto;
   aspect-ratio: 3.5 / 2.25;
   border-radius: 1rem;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
   background-color: rgba(0, 0, 0, 0.1);
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 

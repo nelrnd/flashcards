@@ -60,7 +60,7 @@ function createTestInfo(deck) {
   return elem;
 }
 
-function createTestInteraction() {
+function createTestInteraction(deck) {
   const elem = document.createElement('div');
   const showBtn = document.createElement('button');
   const rateWrapper = document.createElement('div');
@@ -80,6 +80,8 @@ function createTestInteraction() {
   incorrectIcon.alt = 'answer is incorrect';
   correctIcon.src = './assets/correct.svg';
   correctIcon.alt = 'answer is correct';
+
+  showBtn.onclick = () => showAnswer(deck.current);
 
   incorrectBtn.appendChild(incorrectIcon);
   correctBtn.appendChild(correctIcon);
@@ -106,7 +108,7 @@ function createTest(deck) {
 
   const testInfo = createTestInfo(deck);
   const testCards = createTestCards(deck);
-  const testInteraction = createTestInteraction();
+  const testInteraction = createTestInteraction(deck);
 
   elem.className = 'test-container';
 
@@ -124,11 +126,15 @@ function displayTest(deck) {
 }
 
 function showQuestion(card) {
-  document.querySelector('.card').innerText = card.question;
+  showCard(card.question);
 }
 
 function showAnswer(card) {
-  document.querySelector('.card').innerText = card.answer;
+  showCard(card.answer);
+}
+
+function showCard(value) {
+  document.querySelector('.card p').innerText = value;
 }
 
 export { displayDeck };
