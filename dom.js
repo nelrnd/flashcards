@@ -38,4 +38,24 @@ function createCard(card) {
   return elem;
 }
 
+function createTestInfo(deck) {
+  const elem = document.createElement('div');
+  const title = document.createElement('h3');
+  const text = document.createElement('p');
+  const cardNb = document.createElement('span');
+
+  elem.className = 'test-info';
+  cardNb.className = 'test-info-card-number';
+
+  title.textContent = deck.title;
+  cardNb.textContent = '1';
+  text.innerHTML = `/${deck.length} cards`;
+
+  text.prepend(cardNb);
+  elem.appendChild(title);
+  elem.appendChild(text);
+
+  return elem;
+}
+
 export { displayDeck };
