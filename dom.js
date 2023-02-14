@@ -155,7 +155,7 @@ function createResult(deck) {
   const left = document.createElement('div');
   const right = document.createElement('div');
   const subtext = document.createElement('p');
-  const title = doducment.createElement('h3');
+  const title = document.createElement('h3');
 
   const correctIcon = document.createElement('span');
   const incorrectIcon = document.createElement('span');
@@ -166,12 +166,13 @@ function createResult(deck) {
   const againBtn = document.createElement('button');
 
   elem.className = 'result';
+  top.className = 'result-top';
   subtext.className = 'subtext';
   againBtn.className = 'secondary';
   correctIcon.className = 'correct-icon icon';
   incorrectIcon.className = 'incorrect-icon icon';
 
-  subtext.textContent = 'You finisehed testing yourself on';
+  subtext.textContent = 'You finished testing yourself on';
   title.textContent = deck.title;
 
   correctText.textContent = `${deck.corrects} correct answers`;
@@ -201,4 +202,4 @@ function displayResult(deck) {
   document.body.appendChild(elem);
 }
 
-export { displayDeck };
+export { displayDeck, displayResult };

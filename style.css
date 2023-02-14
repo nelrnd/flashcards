@@ -39,6 +39,10 @@ button.big {
   padding: 0;
   min-width: auto;
 }
+button.secondary {
+  color: black;
+  background-color: #e8e8e8;
+}
 button.correct {
   background-color: var(--correct);
 }
@@ -60,7 +64,6 @@ button.incorrect.big::after {
   position: absolute;
   bottom: -30px;
 }
-
 button:hover {
   opacity: 0.8;
 }
@@ -88,7 +91,7 @@ button:hover {
   align-items: center;
 }
 
-.test-info h3 {
+h3 {
   font-size: 32px;
 }
 
@@ -127,4 +130,56 @@ button:hover {
 
 .hidden {
   display: none;
+}
+
+/* Result section */
+
+.result {
+  max-width: 630px;
+  margin: auto;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-content: center;
+  gap: 2rem;
+}
+
+.result-top {
+  grid-column: 1 / span 2;
+}
+
+.subtext {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.incorrect-icon {
+  background: url('./assets/incorrect.svg'), var(--incorrect);
+}
+
+.correct-icon {
+  background: url('./assets/correct.svg'), var(--correct);
+}
+
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 36px;
+  height: 36px;
+  margin-right: 12px;
+  border-radius: 4px;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  bottom: 2px;
+}
+
+.result p {
+  margin-bottom: 1rem;
+}
+
+.result button {
+  width: 100%;
+  margin-bottom: 1rem;
 }
