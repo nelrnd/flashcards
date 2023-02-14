@@ -1,3 +1,5 @@
+import { decks } from './script.js';
+
 function createDeck(deck) {
   const elem = document.createElement('div');
   const wrapper = document.createElement('div');
@@ -29,6 +31,7 @@ function displayDeck(deck) {
 }
 
 function displayDecks(decks) {
+  document.body.innerHTML = null;
   decks.forEach((deck) => displayDeck(deck));
 }
 
@@ -152,6 +155,7 @@ function rateCard(value, deck) {
   deck.next();
   if (!deck.current) {
     displayResult(deck);
+    deck.reset();
     return;
   }
   showQuestion(deck.current);
@@ -193,6 +197,9 @@ function createResult(deck) {
 
   quitBtn.textContent = 'Quit';
   againBtn.textContent = 'Study again';
+
+  quitBtn.onclick = () => displayDecks(decks);
+  againBtn.onclick = () => displayTest(deck);
 
   top.appendChild(subtext);
   top.appendChild(title);

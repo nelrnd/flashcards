@@ -2,7 +2,7 @@ import Card from './classes/card.js';
 import Deck from './classes/deck.js';
 import { displayDecks } from './dom.js';
 
-const decks = [];
+export const decks = [];
 
 async function loadDeck(fileName) {
   const response = await fetch(`./decks/${fileName}.json`);
