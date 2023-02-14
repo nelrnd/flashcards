@@ -127,14 +127,24 @@ function displayTest(deck) {
 
 function showQuestion(card) {
   showCard(card.question);
+  document.querySelector('.rate-wrapper').classList.add('hidden');
+  document.querySelector('.test-interaction button').classList.remove('hidden');
 }
 
 function showAnswer(card) {
   showCard(card.answer);
+  document.querySelector('.rate-wrapper').classList.remove('hidden');
+  document.querySelector('.test-interaction button').classList.add('hidden');
 }
 
 function showCard(value) {
   document.querySelector('.card p').innerText = value;
+}
+
+function rateCard(value, deck) {
+  deck.current.isCorrect = value;
+  deck.next();
+  showQuestion(deck.current);
 }
 
 export { displayDeck };
