@@ -1,8 +1,18 @@
+:root {
+  --correct: #4ec15a;
+  --incorrect: #c14e4e;
+}
+
 * {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
 }
 
 body {
@@ -20,6 +30,35 @@ button {
   color: white;
   background-color: black;
   cursor: pointer;
+  position: relative;
+}
+
+button.big {
+  width: 96px;
+  height: 96px;
+  padding: 0;
+  min-width: auto;
+}
+button.correct {
+  background-color: var(--correct);
+}
+button.incorrect {
+  background-color: var(--incorrect);
+}
+button.correct.big::after {
+  content: 'Correct';
+}
+button.incorrect.big::after {
+  content: 'Incorrect';
+}
+button.correct.big::after,
+button.incorrect.big::after {
+  color: black;
+  text-align: center;
+  width: 100%;
+  display: block;
+  position: absolute;
+  bottom: -30px;
 }
 
 button:hover {
@@ -40,4 +79,51 @@ button:hover {
 }
 .deck-text {
   color: rgba(0, 0, 0, 0.6);
+}
+
+.test-container {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 3fr 1fr;
+  align-items: center;
+}
+
+.test-info h3 {
+  font-size: 32px;
+}
+
+.test-info p {
+  margin-top: 4px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.test-cards,
+.test-interaction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rate-wrapper {
+  display: flex;
+  gap: 2rem;
+}
+
+.card {
+  font-size: 24px;
+  text-align: center;
+  line-height: 150%;
+  padding: 2rem 2rem 4rem;
+  height: 30vmin;
+  width: auto;
+  aspect-ratio: 3.5 / 2.25;
+  border-radius: 1rem;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
 }

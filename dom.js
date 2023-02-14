@@ -51,7 +51,7 @@ function createTestInfo(deck) {
 
   title.textContent = deck.title;
   cardNb.textContent = '1';
-  text.innerHTML = `/${deck.length} cards`;
+  text.innerHTML = ` / ${deck.length} cards`;
 
   text.prepend(cardNb);
   elem.appendChild(title);
@@ -64,21 +64,17 @@ function createTestInteraction() {
   const elem = document.createElement('div');
   const showBtn = document.createElement('button');
   const rateWrapper = document.createElement('div');
-  const incorrectWrapper = document.createElement('div');
   const incorrectBtn = document.createElement('button');
-  const incorrectText = document.createElement('span');
   const incorrectIcon = document.createElement('img');
-  const correctWrapper = document.createElement('div');
   const correctBtn = document.createElement('button');
-  const correctText = document.createElement('span');
   const correctIcon = document.createElement('img');
 
+  elem.className = 'test-interaction';
+  rateWrapper.className = 'rate-wrapper hidden';
   incorrectBtn.className = 'incorrect big';
   correctBtn.className = 'correct big';
 
   showBtn.textContent = 'Show answer';
-  incorrectText.textContent = 'Incorrect';
-  correctText.textContent = 'Correct';
 
   incorrectIcon.src = './assets/incorrect.svg';
   incorrectIcon.alt = 'answer is incorrect';
@@ -86,13 +82,9 @@ function createTestInteraction() {
   correctIcon.alt = 'answer is correct';
 
   incorrectBtn.appendChild(incorrectIcon);
-  incorrectWrapper.appendChild(incorrectBtn);
-  incorrectWrapper.appendChild(incorrectText);
   correctBtn.appendChild(correctIcon);
-  correctWrapper.appendChild(correctBtn);
-  correctWrapper.appendChild(correctText);
-  rateWrapper.appendChild(incorrectWrapper);
-  rateWrapper.appendChild(correctWrapper);
+  rateWrapper.appendChild(incorrectBtn);
+  rateWrapper.appendChild(correctBtn);
   elem.appendChild(showBtn);
   elem.appendChild(rateWrapper);
 
@@ -103,6 +95,7 @@ function createTestCards(deck) {
   const elem = document.createElement('div');
   const card = createCard(deck.cards[0]);
 
+  elem.className = 'test-cards';
   elem.appendChild(card);
 
   return elem;
