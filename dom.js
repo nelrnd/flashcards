@@ -97,4 +97,35 @@ function createTestInteraction() {
   return elem;
 }
 
+function createTestCards(deck) {
+  const elem = document.createElement('div');
+  const card = createCard(deck.cards[0]);
+
+  elem.appendChild(card);
+
+  return elem;
+}
+
+function createTest(deck) {
+  const elem = document.createElement('div');
+
+  const testInfo = createTestInfo(deck);
+  const testCards = createTestCards(deck);
+  const testInteraction = createTestInteraction();
+
+  elem.className = 'test-container';
+
+  elem.appendChild(testInfo);
+  elem.appendChild(testCards);
+  elem.appendChild(testInteraction);
+
+  return elem;
+}
+
+function displayTest(deck) {
+  const test = createTest(deck);
+  document.body.innerHTML = null;
+  document.body.appendChild(test);
+}
+
 export { displayDeck };
