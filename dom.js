@@ -151,16 +151,54 @@ function rateCard(value, deck) {
 
 function createResult(deck) {
   const elem = document.createElement('div');
+  const top = document.createElement('div');
+  const left = document.createElement('div');
+  const right = document.createElement('div');
   const subtext = document.createElement('p');
   const title = doducment.createElement('h3');
 
   const correctIcon = document.createElement('span');
   const incorrectIcon = document.createElement('span');
-
   const correctText = document.createElement('p');
+  const incorrectText = document.createElement('p');
+
+  const quitBtn = document.createElement('button');
+  const againBtn = document.createElement('button');
+
+  elem.className = 'result';
+  subtext.className = 'subtext';
+  againBtn.className = 'secondary';
+  correctIcon.className = 'correct-icon icon';
+  incorrectIcon.className = 'incorrect-icon icon';
 
   subtext.textContent = 'You finisehed testing yourself on';
   title.textContent = deck.title;
+
+  correctText.textContent = `${deck.corrects} correct answers`;
+  incorrectText.textContent = `${deck.incorrects} incorrect answers`;
+
+  quitBtn.textContent = 'Quit';
+  againBtn.textContent = 'Study again';
+
+  top.appendChild(subtext);
+  top.appendChild(title);
+  correctText.prepend(correctIcon);
+  incorrectText.prepend(incorrectIcon);
+  left.appendChild(correctText);
+  left.appendChild(incorrectText);
+  right.appendChild(quitBtn);
+  right.appendChild(againBtn);
+  elem.appendChild(top);
+  elem.appendChild(left);
+  elem.appendChild(right);
+
+  return elem;
+}
+
+function displayResult(deck) {
+  const elem = createResult(deck);
+  document.body.innerHTML = null;
+  document.body.appendChild(elem);
 }
 
 export { displayDeck };
