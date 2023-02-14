@@ -13,6 +13,8 @@ function createDeck(deck) {
   text.textContent = `${deck.length} cards`;
   button.textContent = 'Start';
 
+  button.onclick = () => displayTest(deck);
+
   wrapper.appendChild(title);
   wrapper.appendChild(text);
   elem.appendChild(wrapper);
@@ -123,9 +125,9 @@ function createTest(deck) {
 }
 
 function displayTest(deck) {
-  const test = createTest(deck);
+  const elem = createTest(deck);
   document.body.innerHTML = null;
-  document.body.appendChild(test);
+  document.body.appendChild(elem);
 }
 
 export { displayDeck };
