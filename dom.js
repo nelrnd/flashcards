@@ -82,6 +82,8 @@ function createTestInteraction(deck) {
   correctIcon.alt = 'answer is correct';
 
   showBtn.onclick = () => showAnswer(deck.current);
+  incorrectBtn.onclick = () => rateCard(false, deck);
+  correctBtn.onclick = () => rateCard(true, deck);
 
   incorrectBtn.appendChild(incorrectIcon);
   correctBtn.appendChild(correctIcon);
@@ -145,6 +147,20 @@ function rateCard(value, deck) {
   deck.current.isCorrect = value;
   deck.next();
   showQuestion(deck.current);
+}
+
+function createResult(deck) {
+  const elem = document.createElement('div');
+  const subtext = document.createElement('p');
+  const title = doducment.createElement('h3');
+
+  const correctIcon = document.createElement('span');
+  const incorrectIcon = document.createElement('span');
+
+  const correctText = document.createElement('p');
+
+  subtext.textContent = 'You finisehed testing yourself on';
+  title.textContent = deck.title;
 }
 
 export { displayDeck };

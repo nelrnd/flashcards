@@ -13,6 +13,20 @@ export default class Deck {
     return this.cards[this._current];
   }
 
+  get corrects() {
+    return this.cards.reduce(
+      (prev, curr) => (curr.isCorrect ? prev + 1 : prev),
+      0
+    );
+  }
+
+  get incorrects() {
+    return this.cards.reduce(
+      (prev, curr) => (curr.isCorrect ? prev : prev + 1),
+      0
+    );
+  }
+
   add(card) {
     this.cards.push(card);
   }

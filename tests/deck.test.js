@@ -21,7 +21,7 @@ describe('Class for creating deck element', () => {
   });
 
   it('Add a new card to deck', () => {
-    const deck = new Deck(title, cards);
+    const deck = new Deck(title, [...cards]);
     const card = new Card('What is 10/2?', '10/2 is 5');
     deck.add(card);
     expect(deck.length).toBe(4);
@@ -37,5 +37,15 @@ describe('Class for creating deck element', () => {
     const deck = new Deck(title, cards);
     deck.next();
     expect(deck.current.question).toBe(cards[1].question);
+  });
+
+  it('Get number of cards answered correctly and incorrectly', () => {
+    const deck = new Deck(title, cards);
+    while (deck.current) {
+      deck.current.isCorrect = deck._current % 2 ? true : false;
+      deck.next();
+    }
+    expect(deck.corrects).toBe(1);
+    expect(deck.incorrects).toBe(2);
   });
 });
