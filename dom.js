@@ -123,4 +123,12 @@ function displayTest(deck) {
   document.body.appendChild(elem);
 }
 
+function showQuestion(card) {
+  document.querySelector('.card').innerText = card.question;
+}
+
+function showAnswer(card) {
+  document.querySelector('.card').innerText = card.answer;
+}
+
 export { displayDeck };
