@@ -27,4 +27,15 @@ describe('Class for creating deck element', () => {
     expect(deck.length).toBe(4);
     expect(deck.cards[3]).toBe(card);
   });
+
+  it('Get current card', () => {
+    const deck = new Deck(title, cards);
+    expect(deck.current.question).toBe(cards[0].question);
+  });
+
+  it('Pass to next card', () => {
+    const deck = new Deck(title, cards);
+    deck.next();
+    expect(deck.current.question).toBe(cards[1].question);
+  });
 });
