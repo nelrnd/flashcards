@@ -155,6 +155,11 @@ function rateCard(value, deck) {
     return;
   }
   showQuestion(deck.current);
+  updateCardNumber(deck._current);
+}
+
+function updateCardNumber(index) {
+  document.querySelector('.test-info-card-number').innerText = index + 1;
 }
 
 function createResult(deck) {
