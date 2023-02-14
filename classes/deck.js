@@ -22,7 +22,7 @@ export default class Deck {
 
   get incorrects() {
     return this.cards.reduce(
-      (prev, curr) => (curr.isCorrect ? prev : prev + 1),
+      (prev, curr) => (curr.isCorrect === false ? prev + 1 : prev),
       0
     );
   }
@@ -33,5 +33,10 @@ export default class Deck {
 
   next() {
     this._current++;
+  }
+
+  reset() {
+    this.cards.forEach((card) => (card.isCorrect = null));
+    this._current = 0;
   }
 }

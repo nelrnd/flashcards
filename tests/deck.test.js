@@ -48,4 +48,19 @@ describe('Class for creating deck element', () => {
     expect(deck.corrects).toBe(1);
     expect(deck.incorrects).toBe(2);
   });
+
+  it('Reseting a deck', () => {
+    const deck = new Deck(title, cards);
+    deck.current.isCorrect = true;
+    deck.next();
+    deck.current.isCorrect = false;
+    deck.next();
+    deck.current.isCorrect = true;
+    deck.next();
+
+    deck.reset();
+    expect(deck.corrects).toBe(0);
+    expect(deck.incorrects).toBe(0);
+    expect(deck._current).toBe(0);
+  });
 });
