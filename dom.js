@@ -58,4 +58,43 @@ function createTestInfo(deck) {
   return elem;
 }
 
+function createTestInteraction() {
+  const elem = document.createElement('div');
+  const showBtn = document.createElement('button');
+  const rateWrapper = document.createElement('div');
+  const incorrectWrapper = document.createElement('div');
+  const incorrectBtn = document.createElement('button');
+  const incorrectText = document.createElement('span');
+  const incorrectIcon = document.createElement('img');
+  const correctWrapper = document.createElement('div');
+  const correctBtn = document.createElement('button');
+  const correctText = document.createElement('span');
+  const correctIcon = document.createElement('img');
+
+  incorrectBtn.className = 'incorrect big';
+  correctBtn.className = 'correct big';
+
+  showBtn.textContent = 'Show answer';
+  incorrectText.textContent = 'Incorrect';
+  correctText.textContent = 'Correct';
+
+  incorrectIcon.src = './assets/incorrect.svg';
+  incorrectIcon.alt = 'answer is incorrect';
+  correctIcon.src = './assets/correct.svg';
+  correctIcon.alt = 'answer is correct';
+
+  incorrectBtn.appendChild(incorrectIcon);
+  incorrectWrapper.appendChild(incorrectBtn);
+  incorrectWrapper.appendChild(incorrectText);
+  correctBtn.appendChild(correctIcon);
+  correctWrapper.appendChild(correctBtn);
+  correctWrapper.appendChild(correctText);
+  rateWrapper.appendChild(incorrectWrapper);
+  rateWrapper.appendChild(correctWrapper);
+  elem.appendChild(showBtn);
+  elem.appendChild(rateWrapper);
+
+  return elem;
+}
+
 export { displayDeck };
